@@ -1,0 +1,197 @@
+\chapter{Estado del arte}
+\label{chapter:estadodelarte}
+
+En esta sección vamos a describir el panorama actual de \textit{``Big Data"}, las tecnologías que tenemos disponibles y los motivos de nuestra elección para la realización de este TFM.
+
+%%% SECTION
+\section{Big Data}
+En los principios del siglo XXI las empresas tecnológicas como Google , Amazon y Yahoo tuvieron problemas para seguir prestando sus servicios como hasta ese momento, pues estaban almacenando una cantidad de información que luego sus servidores ya no podían procesar, por lo que debían usar un procesamiento paralelo para gestionar todos esos datos y así reducir el tiempo de procesamiento. Además, este problema se agravó porque aparecieron nuevas fuentes de información por lo que esta heterogeneidad de datos necesitó la creación de nuevos modelos de datos que facilitaran su proceso, sin importar su tipo o estructura. Por último, los datos necesitaban ser procesados de forma casi instantánea, por ejemplo en sus buscadores, para ofrecer un servicio óptimo para los clientes. 
+
+Es por todo esto que se dieron cuenta que las técnicas tradicionales de procesamiento de datos no eran suficientes y se crearon nuevas tecnologías para poder continuar con el modelo de negocio que habían creado. 
+
+Las nuevas técnicas para solventar los problemas descritos anteriormente se basaron en estos dos conceptos:
+\begin{itemize}
+    \item Dividir el problema en subproblemas de menor tamaño y complejidad. 
+    \item Construir la solución final a partir del ensamblado de las soluciones parciales. 
+\end{itemize}
+
+Existen muchas definiciones de \textit{``Big Data"}, la primera definición del 2001 el analista Doug Laney de META Group (ahora Garner) utilizaba el término \textit{``Big Data"}\cite{laney} como el conjunto de técnicas y tecnologías para el tratamiento de datos, en entornos de gran volumen, variedad de orígenes y en los que la velocidad de respuesta es crítica - esta definición se conoce como las 3 V’s del \textit{``Big Data"}: volumen, velocidad y variedad.  
+
+Posteriormente han surgido nuevas definiciones e incluso se han añadido más V’s a la definición original, como veracidad, valor, variabilidad, validez, volatilidad... 
+
+Haciendo un resumen de todas estas interpretaciones sobre el mismo concepto, podemos quedarnos con la siguiente definición\cite{casas}: 
+
+\textit{``Big Data"} es el conjunto de estrategias, tecnologías y sistemas para el almacenamiento, procesamiento, análisis y visualización de conjuntos de datos complejos.
+
+%%% SECTION
+\section{Cloud Computing}
+
+El \textit{``Cloud Computing"}\cite{erl}\cite{skemp} o computación en la nube permite acceder a recursos informáticos desde cualquier lugar y en cualquier dispositivo compatible a través de Internet. La práctica se hizo popular durante los inicios del 2000 debido al amplio acceso a Internet y al aumento de la popularidad de dispositivos móviles como los teléfonos inteligentes. 
+
+La computación en la nube evita la necesidad de instalar aplicaciones en dispositivos locales. En su nivel más básico, la computación en nube utiliza Internet para compartir recursos informáticos, como memoria, almacenamiento y potencia de procesamiento, y proporciona acceso a aplicaciones, datos y servicios desde cualquier lugar y en cualquier dispositivo. Algunos ejemplos puede ser Google Maps, Microsoft Word Online, Overleaf.
+
+Las características que definen el \textit{``Cloud Computing"} son: Accesibilidad a Internet, configuración de recursos, multitenencia (una instancia de software que sirve a muchos usuarios), autenticación amplia, opciones de suscripción, funciones de autoservicio y accesibilidad desde cualquier lugar. 
+
+Según la capa o el nivel de servicio que provee el \textit{``Cloud Computing"} nos encontraremos con los siguientes tipos: Infraestructure as a service, Platform as a service y Software as a service.
+
+\subsection{Infraestructure as a service (IaaS)}
+
+IaaS ofrece infraestructura de Cloud Computing a las organizaciones, incluyendo servidores, redes, sistemas operativos y almacenamiento, a través de la tecnología de virtualización. Estos servidores en nube se proporcionan normalmente al cliente a través de un panel o una API, y los clientes de IaaS tienen un control total sobre toda la infraestructura. IaaS proporciona las mismas tecnologías y capacidades que un centro de datos tradicional sin tener que mantenerlo o gestionarlo físicamente. Los clientes de IaaS todavía pueden acceder a sus servidores y almacenamiento directamente, pero todo se subcontrata a través de un "centro de datos virtual" en la nube. 
+
+\subsection{Platform as a service (PaaS)}
+
+Los servicios de plataforma en la nube proporcionan componentes de nube a cierto software mientras que se utilizan principalmente para aplicaciones. PaaS proporciona un marco de trabajo para los desarrolladores sobre el que pueden construir y utilizar para crear aplicaciones personalizadas. Todos los servidores, almacenamiento y redes pueden ser administrados por la empresa o por un proveedor externo, mientras que los desarrolladores pueden mantener la administración de las aplicaciones. 
+
+\subsection{Software as a service (SaaS)}
+
+Los servicios de aplicaciones en la nube utilizan Internet para entregar aplicaciones a sus usuarios, que son gestionadas por un proveedor externo. La mayoría de las aplicaciones SaaS se ejecutan directamente a través del navegador web y no requieren descargas o instalaciones en el lado del cliente.
+
+
+%%% SECTION
+\section{Hadoop}
+
+Hadoop\cite{hadoop} es el framework de software libre que se encuentra en el corazón de gran parte de la revolución del Big Data y la analítica. Proporciona soluciones para el almacenamiento y análisis de datos empresariales con una escalabilidad lineal. 
+
+La librería de software Apache Hadoop es un framework que permite el procesamiento distribuido de grandes conjuntos de datos a través de clusters de ordenadores utilizando modelos de programación simples. Está diseñado para pasar de servidores individuales a miles de máquinas, cada una de las cuales ofrece computación y almacenamiento local. En lugar de depender del hardware para ofrecer alta disponibilidad, la propia biblioteca está diseñada para detectar y gestionar los fallos en la capa de aplicación, ofreciendo así un servicio de alta disponibilidad sobre un grupo de ordenadores, cada uno de los cuales puede ser propenso a los fallos.
+
+\subsection{Componentes}
+
+Hadoop utiliza un sistema de ficheros distribuido (HDFS) que proporciona acceso de alto rendimiento a los datos de la aplicación y se basa en el paradigma MapReduce para el procesamiento en paralelo de grandes conjuntos de datos. Además, en su núcleo se encuentra YARN\cite{yarn}, un framework para la programación de trabajos y la gestión de recursos de clúster. 
+
+Otros módulos muy importantes dentro del ecosistema de Hadoop son los siguientes: 
+\begin{itemize}
+    \item \textbf{Ambari}\cite{ambari}: Una herramienta basada en web para aprovisionar, gestionar y monitorizar clusters de Hadoop. 
+    \item \textbf{Avro}\cite{avro}: Un sistema de serialización de datos. 
+    \item \textbf{Cassandra}\cite{cassandra}: Una base de datos multi-master escalable sin puntos de fallo. 
+    \item \textbf{HBase}\cite{hbase}: Una base de datos escalable y distribuida que soporta el almacenamiento estructurado de datos para grandes tablas. 
+    \item \textbf{Hive}\cite{hive}: Una infraestructura de almacenamiento de datos que proporciona integración de datos y consultas ad hoc. 
+    \item \textbf{Pig}\cite{pig}: Un lenguaje de flujo de datos de alto nivel y un marco de ejecución para el cálculo paralelo. 
+    \item \textbf{Spark}\cite{spark}: Un motor de cálculo rápido y general para los datos de Hadoop. Spark proporciona un modelo de programación simple y expresivo que soporta una amplia gama de aplicaciones, incluyendo ETL, aprendizaje de máquinas, procesamiento de flujos y computación de gráficos. 
+    \item \textbf{Tez}\cite{tez}: Un framework de programación de flujo de datos generalizado, construido sobre Hadoop YARN, que proporciona un motor potente y flexible para ejecutar un DAG arbitrario de tareas para procesar datos tanto para casos de uso por lotes como interactivos. 
+    \item \textbf{ZooKeeper}\cite{zookeeper}: Un servicio de coordinación de alto rendimiento para aplicaciones distribuidas. 
+    \item \textbf{Kafka}\cite{Kafka}: Un sistema para construir flujos de datos en tiempo real y aplicaciones en streaming. Es escalable horizontalmente, tolerante a fallos y rápido. 
+    \item \textbf{Storm}\cite{storm}: Un sistema de computación en tiempo real. Facilita el procesamiento fiable de flujos de datos, haciendo para el procesamiento en tiempo real lo que Hadoop hizo para el procesamiento por lotes. 
+\end{itemize}
+
+\subsection{Distribuciones}
+
+Hadoop, a pesar de ser un proyecto de software libre, cuenta con múltiples distribuciones comerciales que suministran este framework de Big Data como un paquete.  
+
+Los más influyentes son las siguientes: 
+\begin{itemize}
+    \item \textbf{Cloudera}\cite{cloudera}
+
+Cloudera fue el primer proveedor en ofrecer Hadoop como un paquete y continúa siendo líder en la industria. Su distribución Cloudera CDH, que contiene todos los componentes de código libre, es la distribución Hadoop más popular. Cloudera es conocida por innovar con adiciones a la estructura central, fue la primera en ofrecer SQL-for-Hadoop con su motor de consultas Impala. Otras aportaciones que incluyen son la interfaz de usuario, la seguridad y las interfaces para la integración con aplicaciones de terceros. Ofrece soporte para toda la distribución a través de su servicio de suscripción Cloudera Enterprise. 
+
+    \item \textbf{Hortonworks}\cite{hortonworks}
+
+La plataforma de Hortonworks es completamente de código libre,  de hecho, la compañía es conocida por hacer comprar otras compañías y liberar su código más útil en la comunidad de software libre. Lo que algunos han visto como el comienzo de una tendencia hacia la consolidación en el mercado ha provocado un crecimiento en la popularidad del producto de Hortonworks. Recientemente, Pivotal detuvo el desarrollo de su propia distribución y tanto Amazon como IBM están ofreciendo Hortonworks como opciones en sus propias plataformas, junto con sus propias distribuciones de Hadoop. La plataforma de Hortonworks también es el núcleo de la Open Data Platform Initiative, un grupo que busca simplificar y estandarizar las especificaciones en la ecosfera de Big Data. A largo plazo, es probable que esto signifique que recibirá un apoyo aún mayor.   
+
+    \item \textbf{MapR}\cite{mapr}                              
+
+Al igual que Hortonworks y Cloudera, MapR es un proveedor centrado en la plataforma, en lugar de un proveedor de servicios gestionados. MapR integra su propio sistema de base de datos MapR-DB que, según afirman, es entre cuatro y siete veces más rápido que la base de datos Hadoop HBase que se ejecuta en distribuciones de la competencia. Debido a su potencia y velocidad, MapR se considera a menudo una buena opción para los proyectos más grandes y exigentes de Big Data. 
+
+    \item \textbf{Amazon Elastic Map Reduce}\cite{amazonemr}
+
+Amazon ofrece una plataforma Hadoop-as-a-Service bajo el brazo de Amazon Web Services. Una ventaja clave del modelo de pago \textit{“pay-as-you-go"} que ofrecen los proveedores de servicios exclusivamente en la nube es la escalabilidad que ofrecen, ya que el almacenamiento y el procesamiento de datos pueden ampliarse o reducirse a medida que cambia la demanda. Amazon ha anunciado recientemente que los clientes pueden ahora utilizar el framework de procesamiento de flujos Apache Flink para el análisis de datos en tiempo real, junto con otras herramientas populares como Kafka y Presto. También se conecta sin problemas con otras infraestructuras de servicios en la nube de Amazon, como EC2 para el procesamiento en la nube, Amazon S3 y DynamoDB para el almacenamiento y AWS IoT para recopilar datos de los dispositivos del IoT (Internet de las cosas). 
+
+    \item \textbf{Microsoft}\cite{microsofthdinsight}
+
+La plataforma Azure HDInsight de Microsoft es un servicio en la nube que ofrece instalaciones gestionadas de varias distribuciones Hadoop de código abierto, incluyendo Hortonworks, Cloudera y MapR. Los integra con su propia plataforma Azure Data Lake para ofrecer una solución completa de almacenamiento y análisis basados en la nube. Además del framework central de Hadoop, HDInsights proporciona servicios de nube de Spark, Hive, Kafka y Storm, y su propio marco de seguridad de la nube. 
+
+    \item \textbf{Altiscale}\cite{altiscale} 
+
+Adquirida recientemente por SAP por un valor de 125 millones de dólares, Altiscale es otra empresa que ofrece un servicio de Hadoop-as-a-service gestionado y basado en la nube. Su producto Altiscale Data Cloud incluye servicios operativos adicionales como automatización, seguridad, escalado y ajuste de rendimiento junto con el marco central de Hadoop. Altiscale Data Cloud también proporciona servicios gestionados de Spark, Hive y Pig pero a diferencia de los otros, utiliza su propia distribución de Hadoop en lugar de la de uno de los proveedores centrados en la plataforma, como Hortonworks o MapR.
+\end{itemize}
+
+Cabe destacar que recientemente (30 de octubre de 2018) se anunció la unión de las dos principales distribuciones, Cloudera y Hortonworks, aunque a día de hoy todavía se mantienen como distribuciones distintas.
+
+%%SECTION
+\section{Comparativa de las diferentes arquitecturas}
+
+Hadoop se puede clasificar en tres variantes según la tipología de su arquitectura\cite{bengfort}.
+
+\subsection{Plataformas Cloud}
+
+El modelo basado en la nube permite la mejor adaptabilidad a la vez que proporciona un cifrado de alta seguridad de los datos tanto en reposo como en tránsito. Este modelo permite actualizaciones fuera de horario que no causarán interrupciones en la funcionalidad. Además, la nube está lista para desplegarse en mucho menos tiempo que los otros modelos, mientras que su coste es por licencia de usuarios\cite{havanki}.
+
+\subsection{Plataformas Híbridas}
+
+El modelo híbrido es ideal para aquellas empresas que requieren un grado ligeramente superior de seguridad sobre el modelo basado en la nube. El híbrido crea un puente cifrado entre el hardware interno que alberga datos internos y la nube externa que ayuda a organizar la información externa y analizarla. Una vez que el hardware adicional está en su lugar, no se necesita más tiempo para su implementación que un simple modelo de nube y proporciona mayor seguridad a la vez que mantiene la adaptabilidad, pero con un mayor coste. 
+
+\subsection{Plataformas On Premise}
+
+El modelo \textit{``On Premise"} es con diferencia el más costoso y lento de implementar, ya que todas las herramientas necesarias deben estar en las instalaciones. El equipo requerido hace que esta opción sea generalmente prohibitiva en términos de coste, pero proporciona un alto nivel de seguridad. En principio, carece de la adaptabilidad de los modelos anteriores y tarda mucho más tiempo en actualizarse. Este debería ser un modelo de último recurso para aquellos que están fuertemente regulados lejos de cualquier tipo de modelo híbrido o de nube.
+
+%%% SECTION
+\section{Entorno de trabajo}
+
+En mi compañía se ha optado por contratar los servicios \textit{``Cloud"} de Microsoft, por lo que contaremos con la distribución de Hadoop en la plataforma Azure HDInsight\cite{yadav}. En concreto, esta plataforma está basada en la distribución de Hadoop de Hortonworks.
+
+El motivo de la selección de esta distribución ha sido porque, además de contar con los servicios de una empresa como Microsoft, disponer de una infraestructura \textit{``Cloud"} tipo IaaS para el entorno Hadoop permite una mayor flexibilidad y escalabilidad que los otros sistemas \textit{``On Premise"}. Es muy rápido el proceso de crear, eliminar nodos, modificar sus características, así como aumentar el espacio de almacenamiento. 
+
+\subsection{Caracerísticas}
+Las características que compenen el entorno de trabajo son las siguientes:
+\begin{itemize}
+    \item Versión:
+
+La versión de HDInsight es la 3.6 que se corresponde con la versión 2.6 de Hortonworks Data Platform (HDP). 
+
+    \item Nodos:
+
+2 Head (28 GB RAM) 
+4 Workers (56 GB RAM) 
+3 Zookeepers (4 GB RAM) 
+
+    \item Almacenamiento:
+
+En el almacenamiento HDFS disponemos de 1,5 TB, mientras que en el Data Lake se dispondrá de un espacio altamente escalable, pues se factura mensualmente por el espacio usado mediante el sistema pay-as-you-go. 
+\end{itemize}
+
+\subsection{Datos}
+
+Los datos iniciales están alojados en el Data Lake de Azure y son aprovisionados diariamente de la información que reside en el repositorio informacional Oracle EXADATA. 
+
+Contaremos con las siguientes tablas: 
+
+\begin{itemize}
+    \item DATOS\_WEB: 300.642.104 registros - 362 GB 
+
+    Registro de todas las interacciones realizadas por los clientes en las plataformas web del Portal del Cliente y en las aplicaciones móviles. 
+
+    \item FACTURA: 590.473.454 registros - 74 GB 
+
+    Datos de facturación mensual/bimensual de cada cliente. 
+
+    \item CONSUMO: 837.014.368 registros - 16 GB 
+
+    Detalle del consumo de los clientes. 
+
+    \item RECLAMACION: 3.218.571 registros - 1.2 GB 
+
+    Reclamaciones realizadas por los clientes. 
+
+    \item ACCION\_CLIENTE: 133.026.680 registros - 7,5 GB 
+
+    Acciones realizadas al cliente: altas, bajas, cambio de titularidad... 
+
+    \item INTERACCION\_CLIENTE: 113.969.367 registros - 3,4 GB 
+
+    Interacciones realizadas con el cliente: por teléfono, email, puntos de atención... 
+
+    \item CALLBACK\_CLIENTE: 4.767.664 registros - 500 MB 
+
+    Registro de llamadas tipo Callback al cliente. 
+
+    \item CLIENTE: 15.242.851 registros - 2,2 GB 
+
+    Información personal del cliente. 
+
+    \item CONTRATO: 30.421.621 registros - 7,1 GB 
+
+    Información relativa al contrato entre la empresa y el cliente. 
+
+    \item DIRECCION\_CLIENTE: 29.212.542 registros – 1,9 GB 
+
+    Información del domicilio del cliente. 
+\end{itemize}
